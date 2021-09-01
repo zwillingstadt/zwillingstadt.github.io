@@ -1,0 +1,270 @@
+:root {
+
+  /* colors */
+  --col-light: #ededed; /* light gray */
+  --col-dark: #333; /* dark gray */
+  --col-primary: #213b54; /* dark blue */
+
+  /*  sizes */
+  --sz-1: 0.3rem;
+  --sz-2: 0.5rem;
+  --sz-3: 0.75rem;
+  --sz-4: 1rem;
+  --sz-5: 1.3rem;
+  --sz-6: 1.5rem;
+  --sz-7: 1.7rem;
+  --sz-8: 2rem;
+
+  /* text */
+  --txt-width: 60rem;
+  --txt-height: 1.3;
+
+  /* margin and padding */
+  --m: var(--sz-4);
+  --p: var(--sz-2);
+  --m-0: 0;
+  --p-0: 0;
+}
+
+/* browser adjusts height/width values to account for border/padding added */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--col-light);
+  color: var(--col-dark);
+  font: 400 1rem/1.5 'Atkinson Hyperlegible', sans-serif;
+  margin: var(--m-0);
+}
+
+main {
+  word-spacing: .1ch;
+  padding-top: 4rem;
+}
+
+header {
+  background-color: var(--col-primary);
+  color: var(--col-light);
+  border-bottom: 1px solid var(--col-light);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: var(--col-primary);
+  color: var(--col-light);
+}
+
+header nav {
+  padding: 0 var(--sz-2);
+}
+
+a:visited {
+  color: inherit;
+}
+
+footer a {
+  color: var(--col-light);
+}
+
+section, footer {
+  padding: var(--sz-4);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav > a {
+  padding: var(--sz-3) var(--sz-4);
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+nav > a:first-child {
+  padding: var(--sz-3) var(--sz-4) var(--sz-3) 0;
+}
+
+nav > a:hover:not(:first-child) {
+  background-color: var(--col-dark);
+}
+
+nav > a:focus:not(:first-child) {
+  background-color: var(--col-dark);
+  outline: 0.2rem solid var(--col-light);
+  outline-offset: 0.1rem;
+}
+
+nav > a svg {
+  position: absolute;
+  height: 4rem;
+  top: 0;
+}
+
+nav > a:nth-child(2) {
+  margin-left: 2.5rem;
+}
+
+p, ul, ol, blockquote, dl, h1, h2, h3, h4, h5, h6, address {
+  max-width: var(--txt-width);
+  margin: 0 auto var(--m) auto;
+}
+
+p:last-child {
+  margin-bottom: var(--m-0);
+}
+
+h1 {
+  padding: 0;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: 50;
+}
+
+.color-block {
+  background-color: var(--col-primary);
+  color: var(--col-light);
+}
+
+[aria-label="Main"] {
+  border-bottom: 2px solid var(--col-light);
+}
+
+[aria-label="Main"] > a {
+  color: var(--col-light);
+}
+
+header > p {
+  padding-top: var(--sz-4);
+  margin-left: calc(55px + 1rem);
+  position: relative;
+  max-width: 100%;
+}
+
+.link-action {
+  padding: var(--sz-1) var(--sz-2);
+  border: 1px solid var(--col-primary);
+  color: var(--col-primary);
+}
+
+main .link-action {
+  background-color: var(--col-primary);
+  border-color: var(--col-light);
+  color: var(--col-light);
+}
+
+header .link-action,
+footer .link-action {
+  border-color:  var(--col-light);
+  color: var(--col-light);
+  margin-left: auto;
+}
+
+footer {
+  background-color: var(--col-primary);
+  color: var(--col-light);
+}
+
+.cards {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cards h3,
+.cards h4 {
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--col-light);
+}
+
+article {
+  border: 1px solid var(--col-light);
+  width: 30%;
+  min-width: 20rem;
+  max-width: 50%;
+  padding: var(--sz-2);
+  margin-bottom: var(--m);
+}
+
+.img-circle {
+  border-radius: 50%;
+  float: right;
+  margin: 0 0 var(--m) var(--m);
+  max-width: 600px;
+  width: 30%;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cls-1,
+.cls-2 {
+  fill: var(--col-light);
+}
+
+.cls-2 {
+  stroke:var(--col-dark);
+  stroke-miterlimit: 10;
+}
+
+@media(max-width:50rem) {
+  .img-circle {
+    width: 50%;
+  }
+
+  nav > a svg {
+    height: 2.5rem;
+  }
+
+  nav > a:nth-child(2) {
+    margin-left: 1.5rem;
+  }
+
+  nav > a {
+    padding: var(--sz-3);
+  }
+
+  .no-mobile {
+    display: none;
+  }
+}
+
+@media(max-width:30rem) {
+  header nav {
+    padding: 0 var(--sz-1) 0 0;
+  }
+
+  nav > a {
+    padding: var(--sz-3) var(--sz-2);
+  }
+
+  .cards {
+    width: 100%;
+    padding: var(--sz-2);
+  }
+}
